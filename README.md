@@ -135,8 +135,6 @@ const response = {
 
 :x: report_bug
 
-:x: resolve_name
-
 :x: send_amount_to_address
 
 :x: settings_set
