@@ -2,14 +2,28 @@
 
 ## A nodejs RPC wrapper for LBRY protocol
 
+---
+
+ ** Donate LBRY credits **
+
+ > bUgP1zxWitRBcz4kJdGzgsNoFQU4H71yYu
+
+ ** Donate Bitcoin **
+
+ > 1GXHUyUaMu8RnmHqApz3CuLAbGhcxbqGjT
+
+---
+
 ### To get started:
 
-#### 1) Download the lbrynet-daemon:
+#### 1) Download the and run the lbrynet-daemon:
 ```bash
 $ ./lbrynet-daemon
 ```
 
-#### 2) Require the module in your nodejs package
+Or download the app, and open it.
+
+#### 2) Require the module in your application
 ```javascript
 const lbry = require('lbry-nodejs')
 ```
@@ -18,17 +32,17 @@ const lbry = require('lbry-nodejs')
 
 ```javascript
 lbry.get('name')
-.then((data) => console.log(data))
-.catch((error) => console.error(error))
+.then((data) = console.log(data))
+.catch((error) = console.error(error))
 ```
 
-## List of methods
+## Example
 
-### Get
+### Method: Get
 
 #### Inputs
 ```javascript
-const name = 'TEST_NAME'
+const name = 'itsadisaster'
 ```
 
 ##### Method
