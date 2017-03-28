@@ -1,0 +1,37 @@
+{
+  "name": "lbry-nodejs",
+  "version": "1.0.0",
+  "description": "A nodejs RPC wrapper for LBRY protocol",
+  "main": "index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/simonstead/lbry-nodejs"
+  },
+  "keywords": [
+    "lbry",
+    "crypto",
+    "altcoin",
+    "nodejs",
+    "lbrycoin",
+    "rpc"
+  ],
+  "maintainers": [
+    {
+      "name": "Simon Stead",
+      "email": "simonstead93@gmail.com"
+    }
+  ],
+  "author": "Simon A Stead",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.0"
+  }
+}
