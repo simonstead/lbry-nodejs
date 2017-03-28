@@ -4,11 +4,11 @@
 
 ---
 
- ** Donate LBRY credits **
+ **Donate LBRY credits**
 
  > bUgP1zxWitRBcz4kJdGzgsNoFQU4H71yYu
 
- ** Donate Bitcoin **
+ **Donate Bitcoin**
 
  > 1GXHUyUaMu8RnmHqApz3CuLAbGhcxbqGjT
 
@@ -77,3 +77,74 @@ const response = {
   }
 }
 ```
+
+### Currently available methods
+:ballot_box_with_check: blob_announce_all
+
+:ballot_box_with_check: blob_reflect_all
+
+:ballot_box_with_check: claim_list_mine
+
+:ballot_box_with_check: daemon_stop
+
+:ballot_box_with_check: status
+
+:ballot_box_with_check: settings_get
+
+:ballot_box_with_check: transaction_list
+
+:ballot_box_with_check: wallet_new_address
+
+:ballot_box_with_check: version
+
+:ballot_box_with_check: help
+
+:ballot_box_with_check: resolve_name
+
+:x: blob_delete
+
+:x: blob_get
+
+:x: blob_list
+
+:x: block_show
+
+:x: claim_abandon
+
+:x: claim_list
+
+:x: claim_new_support
+
+:x: claim_show
+
+:x: descriptor_get
+
+:x: file_list
+
+:x: file_seed
+
+:x: get
+
+:x: get_availability
+
+:x: peer_list
+
+:x: publish
+
+:x: reflect
+
+:x: report_bug
+
+:x: resolve_name
+
+:x: send_amount_to_address
+
+:x: settings_set
+
+:x: stream_cost_estimate
+
+:x: transaction_show
+
+:x: wallet_is_address_mine
+
+:x: wallet_public_key
