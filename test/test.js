@@ -128,6 +128,20 @@ describe("LBRY RPC Wrapper: ", (done) => {
       .catch((error) => done(error))
     })
 
+    describe("Methods with optional parameters", (done) => {
+      it("get", (done) => {
+        const blob_hash = "TEST_HASH"
+        const params = {
+          timeout:
+        }
+        lbry.get()
+        .then((response) => {
+          response.should.be.an('object').with.property('result')
+          done()
+        })
+        .catch((error) => done(error))
+      })
+    })
   })
   // remaining methods
   //   , blob_delete, blob_get,    blob_list, ,    block_show, claim_abandon,    claim_list,    ,    claim_new_support, claim_show,    ,    daemon_stop,    descriptor_get, file_delete,    file_list,    file_seed,    get,    get_availability, help,    peer_list,    publish,    reflect,    report_bug,    resolve_name,    send_amount_to_address,    ,    settings_set,    status,    stream_cost_estimate,    ,    transaction_show,    wallet_balance,    wallet_is_address_mine,    wallet_public_key
