@@ -101,48 +101,48 @@ const response = {
 
 :ballot_box_with_check: resolve_name
 
-:x: blob_delete
+:ballot_box_with_check: blob_delete
 
-:x: blob_get
+:ballot_box_with_check: blob_get
 
-:x: blob_list
+:ballot_box_with_check: blob_list
 
-:x: block_show
+:ballot_box_with_check: block_show
 
-:x: claim_abandon
+:ballot_box_with_check: claim_abandon
 
-:x: claim_list
+:ballot_box_with_check: claim_list
 
-:x: claim_new_support
+:ballot_box_with_check: claim_new_support
 
-:x: claim_show
+:ballot_box_with_check: claim_show
 
-:x: descriptor_get
+:ballot_box_with_check: descriptor_get
 
-:x: file_list
+:ballot_box_with_check: file_list
 
-:x: file_seed
+:ballot_box_with_check: file_seed
 
-:x: get
+:ballot_box_with_check: get
 
-:x: get_availability
+:ballot_box_with_check: get_availability
 
-:x: peer_list
+:ballot_box_with_check: peer_list
 
-:x: publish
+:ballot_box_with_check: publish
 
-:x: reflect
+:ballot_box_with_check: reflect
 
-:x: report_bug
+:ballot_box_with_check: report_bug
 
-:x: send_amount_to_address
+:ballot_box_with_check: send_amount_to_address
 
-:x: settings_set
+:ballot_box_with_check: settings_set
 
-:x: stream_cost_estimate
+:ballot_box_with_check: stream_cost_estimate
 
-:x: transaction_show
+:ballot_box_with_check: transaction_show
 
-:x: wallet_is_address_mine
+:ballot_box_with_check: wallet_is_address_mine
 
-:x: wallet_public_key
+:ballot_box_with_check: wallet_public_key
