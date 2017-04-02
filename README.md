@@ -36,9 +36,12 @@ lbry.get('name')
 .catch((error) = console.error(error))
 ```
 
-## Example
 
-### Method: Get
+# Example
+
+### Method with required parameters
+
+### `resolve_name`
 
 #### Inputs
 ```javascript
@@ -77,6 +80,34 @@ const response = {
   }
 }
 ```
+
+
+### Method with optional parameters:
+### `peer_list`
+
+#### Inputs
+```javascript
+const blob_hash = 'some_blob_hash'
+const optional_paramaters = { timeout: 60 }
+```
+
+##### Method
+```javascript
+lbry.peer_list(blob_hash, optional_paramaters)
+```
+
+##### Response
+```javascript
+const response = {
+  "id": null,
+  "jsonrpc": "2.0",
+  "result": {
+
+  }
+}
+```
+
+
 
 ### Currently available methods
 :ballot_box_with_check: blob_announce_all

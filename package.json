@@ -2,7 +2,7 @@
   "name": "lbry-nodejs",
   "version": "1.0.0",
   "description": "A nodejs RPC wrapper for LBRY protocol",
-  "main": "index.js",
+  "main": "lib/lbry.js",
   "scripts": {
     "start": "node ./lib/lbry.js",
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- -R spec"

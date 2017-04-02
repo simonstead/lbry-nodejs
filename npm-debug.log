@@ -1,0 +1,115 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.8.1/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.8
+3 info using node@v6.8.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/SteaSi/apps/lbry/lbry-nodejs',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/SteaSi/.npm/lbry-nodejs/1.0.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/SteaSi/.npm correctMkdir not in flight; initializing
+10 info lifecycle lbry-nodejs@1.0.0~prepublish: lbry-nodejs@1.0.0
+11 silly lifecycle lbry-nodejs@1.0.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/SteaSi/.npm/lbry-nodejs/1.0.0/package.tgz',
+12 verbose tar pack   '/Users/SteaSi/apps/lbry/lbry-nodejs' ]
+13 verbose tarball /Users/SteaSi/.npm/lbry-nodejs/1.0.0/package.tgz
+14 verbose folder /Users/SteaSi/apps/lbry/lbry-nodejs
+15 verbose addLocalTarball adding from inside cache /Users/SteaSi/.npm/lbry-nodejs/1.0.0/package.tgz
+16 verbose correctMkdir /Users/SteaSi/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd lbry-nodejs@1.0.0
+18 verbose afterAdd /Users/SteaSi/.npm/lbry-nodejs/1.0.0/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/SteaSi/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/SteaSi/.npm/lbry-nodejs/1.0.0/package/package.json written
+21 silly publish { name: 'lbry-nodejs',
+21 silly publish   version: '1.0.0',
+21 silly publish   description: 'A nodejs RPC wrapper for LBRY protocol',
+21 silly publish   main: 'lib/lbry.js',
+21 silly publish   scripts:
+21 silly publish    { start: 'node ./lib/lbry.js',
+21 silly publish      test: 'istanbul cover ./node_modules/.bin/_mocha -- -R spec' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'https://www.github.com/simonstead/lbry-nodejs' },
+21 silly publish   keywords: [ 'lbry', 'crypto', 'altcoin', 'nodejs', 'lbrycoin', 'rpc' ],
+21 silly publish   maintainers: [ { name: 'Simon Stead', email: 'simonstead93@gmail.com' } ],
+21 silly publish   author: { name: 'Simon A Stead' },
+21 silly publish   license: 'MIT',
+21 silly publish   dependencies:
+21 silly publish    { chai: '^3.5.0',
+21 silly publish      istanbul: '^0.4.5',
+21 silly publish      mocha: '^3.2.0',
+21 silly publish      request: '^2.81.0' },
+21 silly publish   readme: '# lbry-nodejs\n\n## A nodejs RPC wrapper for LBRY protocol\n\n---\n\n **Donate LBRY credits**\n\n > bUgP1zxWitRBcz4kJdGzgsNoFQU4H71yYu\n\n **Donate Bitcoin**\n\n > 1GXHUyUaMu8RnmHqApz3CuLAbGhcxbqGjT\n\n---\n\n### To get started:\n\n#### 1) Download the and run the lbrynet-daemon:\n```bash\n$ ./lbrynet-daemon\n```\n\nOr download the app, and open it.\n\n#### 2) Require the module in your application\n```javascript\nconst lbry = require(\'lbry-nodejs\')\n```\n\n#### 3) Use a method\n\n```javascript\nlbry.get(\'name\')\n.then((data) = console.log(data))\n.catch((error) = console.error(error))\n```\n\n\n# Example\n\n### Method with required parameters\n\n### `resolve_name`\n\n#### Inputs\n```javascript\nconst name = \'itsadisaster\'\n```\n\n##### Method\n```javascript\nlbry.resolve_name(name)\n```\n\n##### Response\n```javascript\nconst response = {\n  "id": null,\n  "jsonrpc": "2.0",\n  "result": {\n    "author": "Written and directed by Todd Berger",\n    "content_type": "video/mp4",\n    "description": "Four couples meet for Sunday brunch only to discover they are stuck in a house together as the world may be about to end.",\n    "fee": {\n      "USD": {\n        "address": "bX4sH7PbLLfwiMfm5HJKAmzdhoQK3pSuSU",\n        "amount": 5.0\n      }\n    },\n    "language": "en",\n    "license": "Oscilloscope Laboratories",\n    "nsfw": false,\n    "sources": {\n      "lbry_sd_hash": "8e877083818a51734b2722e7f53b3352255feca8c38be619471ef1af730b272f295ff1a774cf28f71dfad7b3a249e747"\n    },\n    "thumbnail": "http://ia.media-imdb.com/images/M/MV5BMTQwNjYzMTQ0Ml5BMl5BanBnXkFtZTcwNDUzODM5Nw@@._V1_SY1000_CR0,0,673,1000_AL_.jpg",\n    "title": "It\'s a Disaster",\n    "ver": "0.0.3"\n  }\n}\n```\n\n\n### Method with optional parameters:\n### `peer_list`\n\n#### Inputs\n```javascript\nconst blob_hash = \'some_blob_hash\'\nconst optional_paramaters = { timeout: 60 }\n```\n\n##### Method\n```javascript\nlbry.peer_list(blob_hash, optional_paramaters)\n```\n\n##### Response\n```javascript\nconst response = {\n  "id": null,\n  "jsonrpc": "2.0",\n  "result": {\n\n  }\n}\n```\n\n\n\n### Currently available methods\n:ballot_box_with_check: blob_announce_all\n\n:ballot_box_with_check: blob_reflect_all\n\n:ballot_box_with_check: claim_list_mine\n\n:ballot_box_with_check: daemon_stop\n\n:ballot_box_with_check: status\n\n:ballot_box_with_check: settings_get\n\n:ballot_box_with_check: transaction_list\n\n:ballot_box_with_check: wallet_new_address\n\n:ballot_box_with_check: version\n\n:ballot_box_with_check: help\n\n:ballot_box_with_check: resolve_name\n\n:ballot_box_with_check: blob_delete\n\n:ballot_box_with_check: blob_get\n\n:ballot_box_with_check: blob_list\n\n:ballot_box_with_check: block_show\n\n:ballot_box_with_check: claim_abandon\n\n:ballot_box_with_check: claim_list\n\n:ballot_box_with_check: claim_new_support\n\n:ballot_box_with_check: claim_show\n\n:ballot_box_with_check: descriptor_get\n\n:ballot_box_with_check: file_list\n\n:ballot_box_with_check: file_seed\n\n:ballot_box_with_check: get\n\n:ballot_box_with_check: get_availability\n\n:ballot_box_with_check: peer_list\n\n:ballot_box_with_check: publish\n\n:ballot_box_with_check: reflect\n\n:ballot_box_with_check: report_bug\n\n:ballot_box_with_check: send_amount_to_address\n\n:ballot_box_with_check: settings_set\n\n:ballot_box_with_check: stream_cost_estimate\n\n:ballot_box_with_check: transaction_show\n\n:ballot_box_with_check: wallet_is_address_mine\n\n:ballot_box_with_check: wallet_public_key\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '115c875c1d528ac2cca350ba7cae0c9da3e6b5c3',
+21 silly publish   _id: 'lbry-nodejs@1.0.0',
+21 silly publish   _shasum: 'aac8bb3934438bdf49e47e5f954058131f8cac64',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name lbry-nodejs
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'lbry-nodejs',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'lbry-nodejs',
+26 silly mapToRegistry   name: 'lbry-nodejs',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/lbry-nodejs
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/SteaSi/.npm/lbry-nodejs/1.0.0/package.tgz
+30 verbose request uri https://registry.npmjs.org/lbry-nodejs
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 8:20:52 AM
+33 verbose request using bearer token for auth
+34 verbose request id 4c595fef0195e89d
+35 http request PUT https://registry.npmjs.org/lbry-nodejs
+36 http 403 https://registry.npmjs.org/lbry-nodejs
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Sun, 02 Apr 2017 07:20:52 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-lcy1137-LCY',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1491117651.956863,VS0,VE1368',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/SteaSi/.npm/registry.npmjs.org/lbry-nodejs on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 1.0.0." : lbry-nodejs
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid lbry-nodejs
+43 verbose cwd /Users/SteaSi/apps/lbry/lbry-nodejs
+44 error Darwin 16.0.0
+45 error argv "/usr/local/Cellar/node/6.8.1/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.8.1
+47 error npm  v3.10.8
+48 error code E403
+49 error "You cannot publish over the previously published version 1.0.0." : lbry-nodejs
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
