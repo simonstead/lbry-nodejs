@@ -23,7 +23,6 @@ describe("LBRY RPC Wrapper: ", (done) => {
     it("should return a response", (done) => {
       lbry.channel_list_mine()
       .then((response) => {
-        console.log(response);
         response.should.be.an('object').with.property('result')
         done()
       })
@@ -32,7 +31,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
   })
 
   describe("channel_new", (done) => {
-    it.only("should create a channel", (done) => {
+    xit("should create a channel", (done) => {
       const name = "@" + "testchannel" + Math.floor(100000*Math.random())
       const amount = 1
       lbry.channel_new(name,amount)
@@ -47,7 +46,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
 
   describe("all other methods", (done) => {
     describe("Methods with optional parameters", (done) => {
-      it("get", (done) => {
+      xit("get", (done) => {
         const blob_hash = "TEST_HASH"
         const params = {
           timeout: "RWTEGRT"
@@ -69,26 +68,8 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("help hould accept command", (done) => {
-        lbry.help("blob_reflect_all")
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-
-      it("blob_announce_all", (done) => {
+      xit("blob_announce_all", (done) => {
         lbry.blob_announce_all()
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-
-      it("wallet_new_address", (done) => {
-        lbry.wallet_new_address()
         .then((response) => {
           response.should.be.an('object').with.property('result')
           done()
@@ -105,7 +86,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("blob_reflect_all", (done) => {
+      xit("blob_reflect_all", (done) => {
         lbry.blob_reflect_all()
         .then((response) => {
           response.should.be.an('object').with.property('result')
@@ -123,7 +104,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("daemon_stop", (done) => {
+      xit("daemon_stop", (done) => {
         lbry.daemon_stop()
         .then((response) => {
           response.should.be.an('object').with.property('result')
@@ -195,52 +176,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         })
         .catch((error) => done(error))
       })
-      it("blob_delete", (done) => {
-        const blob_hash = "blob_hash"
-        lbry.blob_delete(blob_hash)
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-      it("blob_delete", (done) => {
-        const blob_hash = "blob_hash"
-        lbry.blob_delete(blob_hash)
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-      it("blob_delete", (done) => {
-        const blob_hash = "blob_hash"
-        lbry.blob_delete(blob_hash)
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-      it("blob_delete", (done) => {
-        const blob_hash = "blob_hash"
-        lbry.blob_delete(blob_hash)
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-      it("blob_delete", (done) => {
-        const blob_hash = "blob_hash"
-        lbry.blob_delete(blob_hash)
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-      it("blob_get", (done) => {
+      xit("blob_get", (done) => {
         const blob_hash = "blob_hash"
         lbry.blob_get(blob_hash)
         .then((response) => {
@@ -249,11 +185,11 @@ describe("LBRY RPC Wrapper: ", (done) => {
         })
         .catch((error) => done(error))
       })
-      it("blob_list", (done) => {
+      xit("blob_list", (done) => {
         const params = {
           page_size: 4
         }
-        lbry.blob_delete(params)
+        lbry.blob_list(params)
         .then((response) => {
           response.should.be.an('object').with.property('result')
           done()
@@ -274,7 +210,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("block_show", (done) => {
+      xit("block_show", (done) => {
         const params = {
           blockhash: "TEST_HASH"
         }
@@ -286,7 +222,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("claim_new_support", (done) => {
+      xit("claim_new_support", (done) => {
         const params =  {
           name: "TEST_NAME",
           claim_id: "claim_id",
@@ -300,7 +236,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("blob_list", (done) => {
+      xit("blob_list", (done) => {
         const params =  {
           page_size: 4
         }
@@ -312,7 +248,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("block_show", (done) => {
+      xit("block_show", (done) => {
         const params =  {
           blockhash: "blockhash"
         }
@@ -324,7 +260,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("descriptor_get", (done) => {
+      xit("descriptor_get", (done) => {
         const params =  {
           sd_hash: "sd_hash"
         }
@@ -346,7 +282,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("file_seed", (done) => {
+      xit("file_seed", (done) => {
         const params =  {
           status: "status"
         }
@@ -370,7 +306,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("peer_list", (done) => {
+      xit("peer_list", (done) => {
         const params =  {
           blob_hash: "blob_hash"
         }
@@ -382,7 +318,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("publish", (done) => {
+      xit("publish", (done) => {
         const params =  {
           name: "name",
           bid: 0,
@@ -396,7 +332,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("report_bug", (done) => {
+      xit("report_bug", (done) => {
         const params =  {
           message: "THIS IS A TEST MESSAGE FROM UNIT TESTS"
         }
@@ -408,7 +344,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("send_amount_to_address", (done) => {
+      xit("send_amount_to_address", (done) => {
         const params =  {
           amount: 0,
           address: 'address'
@@ -430,7 +366,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("claim_show", (done) => {
+      xit("claim_show", (done) => {
         const params =  {
           name: 'TEST_NAME'
         }
@@ -442,7 +378,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("stream_cost_estimate", (done) => {
+      xit("stream_cost_estimate", (done) => {
         const params =  {
           name: 'TEST_NAME'
         }
@@ -454,7 +390,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("reflect", (done) => {
+      xit("reflect", (done) => {
         const params =  {
           sd_hash: 'sd_hash'
         }
@@ -466,7 +402,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("transaction_show", (done) => {
+      xit("transaction_show", (done) => {
         const params =  {
           txid: 'txid'
         }
@@ -490,7 +426,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("wallet_public_key", (done) => {
+      xit("wallet_public_key", (done) => {
         const params =  {
           wallet: 'wallet'
         }
@@ -502,7 +438,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      it("settings_set", (done) => {
+      xit("settings_set", (done) => {
         const params =  {
            data_rate: 0,
            max_key_fee: 0,
