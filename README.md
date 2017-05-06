@@ -116,6 +116,10 @@ const response = {
 
 :ballot_box_with_check: claim_list_mine
 
+:ballot_box_with_check: channel_list_mine
+
+:ballot_box_with_check: channel_new
+
 :ballot_box_with_check: daemon_stop
 
 :ballot_box_with_check: status
