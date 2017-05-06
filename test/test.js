@@ -19,6 +19,32 @@ describe("LBRY RPC Wrapper: ", (done) => {
     })
   })
 
+  describe("channel_list_mine", (done) => {
+    it("should return a response", (done) => {
+      lbry.channel_list_mine()
+      .then((response) => {
+        console.log(response);
+        response.should.be.an('object').with.property('result')
+        done()
+      })
+      .catch((error) => done(error))
+    })
+  })
+
+  describe("channel_new", (done) => {
+    it.only("should create a channel", (done) => {
+      const name = "@" + "testchannel" + Math.floor(100000*Math.random())
+      const amount = 1
+      lbry.channel_new(name,amount)
+      .then((response) => {
+        console.log(response);
+        response.should.be.an('object').with.property('result')
+        done()
+      })
+      .catch((error) => done(error))
+    })
+  })
+
   describe("all other methods", (done) => {
     describe("Methods with optional parameters", (done) => {
       it("get", (done) => {
