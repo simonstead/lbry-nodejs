@@ -32,8 +32,8 @@ const lbry = require('lbry-nodejs')
 
 ```javascript
 lbry.get('name')
-.then((data) = console.log(data))
-.catch((error) = console.error(error))
+.then((data) => console.log(data))
+.catch((error) => console.error(error))
 ```
 
 

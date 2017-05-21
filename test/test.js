@@ -5,8 +5,47 @@ const port = 5279
 const url = 'http://localhost:' + port + '/lbryapi'
 const r = require('request');
 
+
+
 describe("LBRY RPC Wrapper: ", (done) => {
   const lbry = require('../lib/lbry');
+
+  describe("today's tests", (done) => {
+    it("find a claim", (done) => {
+      lbry.file_list({
+        claim_id: '1e8e7ab72195a00a7d639a3260b0770d3ff9bef0'
+      })
+      .then((response) => {
+        response.should.be.an('object').with.property('result')
+        done()
+      })
+      .catch((error) => done(error))
+    })
+
+    it.only("should download a free file", (done) => {
+      const expectedName = "princess-bubblegum"
+      lbry.claim_show(expectedName)
+      .then((response) => {
+        response.should.be.an('object').with.property('result')
+        response.result.should.be.an('object').with.property('value')
+        const name = response.result.name
+        const feeObject = response.result.value.stream.metadata.fee
+        let cost;
+        if (feeObject) {
+          cost = feeObject.amount
+        } else {
+          lbry.get(name, { download_directory: "/Users/SteaSi/Downloads/LBRY_TEST" })
+          .then((response) => {
+            console.dir(response);
+            response.should.be.an('object').with.property('result')
+            done()
+          })
+          .catch((error) => done(error))
+        }
+      })
+      .catch((error) => done(error))
+    })
+  })
 
   describe("resolve_name", (done) => {
     it("should return a response", (done) => {
