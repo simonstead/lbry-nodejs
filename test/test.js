@@ -197,6 +197,15 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
+      it("wallet_list", (done) => {
+        lbry.wallet_list()
+        .then((response) => {
+          response.should.be.an('object').with.property('result')
+          done()
+        })
+        .catch((error) => done(error))
+      })
+
       xit("wallet_new_address", (done) => {
         lbry.wallet_new_address()
         .then((response) => {
