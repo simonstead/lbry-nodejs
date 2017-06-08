@@ -1,6 +1,6 @@
 {
   "name": "lbry-nodejs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A nodejs RPC wrapper for LBRY protocol",
   "main": "lib/lbry.js",
   "scripts": {
