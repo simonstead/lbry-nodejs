@@ -308,18 +308,6 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
-      xit("descriptor_get", (done) => {
-        const params =  {
-          sd_hash: "sd_hash"
-        }
-        lbry.descriptor_get(params)
-        .then((response) => {
-          response.should.be.an('object').with.property('result')
-          done()
-        })
-        .catch((error) => done(error))
-      })
-
       it("file_delete", (done) => {
         const params =  {}
         lbry.file_delete()
