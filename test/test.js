@@ -34,7 +34,7 @@ describe("LBRY RPC Wrapper: ", (done) => {
         if (feeObject) {
           cost = feeObject.amount
         } else {
-          lbry.get(name, { download_directory: "/Users/SteaSi/Downloads/LBRY_TEST" })
+          lbry.get(name, { download_directory: "~/Downloads/LBRY_TEST" })
           .then((response) => {
             console.dir(response);
             response.should.be.an('object').with.property('result')
@@ -486,6 +486,15 @@ describe("LBRY RPC Wrapper: ", (done) => {
         .catch((error) => done(error))
       })
 
+      xit("wallet_unused_address", (done) => {
+        lbry.wallet_unused_address(params)
+        .then((response) => {
+          response.should.be.an('object').with.property('result')
+          done()
+        })
+        .catch((error) => done(error))
+      })
+
       xit("settings_set", (done) => {
         const params =  {
            data_rate: 0,
@@ -494,6 +503,19 @@ describe("LBRY RPC Wrapper: ", (done) => {
            download_timeout: 60
          }
         lbry.settings_set(params)
+        .then((response) => {
+          response.should.be.an('object').with.property('result')
+          done()
+        })
+        .catch((error) => done(error))
+      })
+
+      it("file_set_status", (done) => {
+        const status = 'start'
+        const params =  {
+          name: 'princess-bubblegum'
+        }
+        lbry.file_set_status(status, params)
         .then((response) => {
           response.should.be.an('object').with.property('result')
           done()
