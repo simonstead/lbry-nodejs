@@ -152,8 +152,6 @@ const response = {
 
 :ballot_box_with_check: claim_show
 
-:ballot_box_with_check: descriptor_get
-
 :ballot_box_with_check: file_list
 
 :ballot_box_with_check: file_seed
@@ -181,3 +179,9 @@ const response = {
 :ballot_box_with_check: wallet_is_address_mine
 
 :ballot_box_with_check: wallet_public_key
+
+:ballot_box_with_check: wallet_list
+
+:ballot_box_with_check: wallet_unused_address
+
+:ballot_box_with_check: file_set_status
